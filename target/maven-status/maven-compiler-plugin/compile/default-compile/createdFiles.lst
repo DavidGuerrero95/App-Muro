@@ -1,0 +1,11 @@
+com\app\muro\clients\ParametrosFeignClient.class
+com\app\muro\models\Proyectos.class
+com\app\muro\models\Muro.class
+com\app\muro\clients\RecomendacionesFeignClient.class
+com\app\muro\config\SwaggerConfiguration.class
+com\app\muro\services\MuroService.class
+com\app\muro\AppMuroApplication.class
+com\app\muro\repository\MuroRepository.class
+com\app\muro\services\IMuroService.class
+com\app\muro\clients\BusquedaFeignClient.class
+com\app\muro\controllers\MuroController.class
