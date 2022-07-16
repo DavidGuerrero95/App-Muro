@@ -8,10 +8,18 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Document(collection = "muro")
+@Data
+@NoArgsConstructor
 public class Muro {
 
 	@Id
+	@JsonIgnore
 	private String id;
 
 	@Indexed(unique = true)
@@ -20,48 +28,6 @@ public class Muro {
 	@NotBlank(message = "ubicacion cannot be null")
 	private List<Double> localizacion;
 
-	private List<String> nombreProyectos;
-
-	public Muro() {
-	}
-
-	public Muro(Integer codigoMuro, List<Double> localizacion, List<String> nombreProyectos) {
-		super();
-		this.codigoMuro = codigoMuro;
-		this.localizacion = localizacion;
-		this.nombreProyectos = nombreProyectos;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public Integer getCodigoMuro() {
-		return codigoMuro;
-	}
-
-	public void setCodigoMuro(Integer codigoMuro) {
-		this.codigoMuro = codigoMuro;
-	}
-
-	public List<Double> getLocalizacion() {
-		return localizacion;
-	}
-
-	public void setLocalizacion(List<Double> localizacion) {
-		this.localizacion = localizacion;
-	}
-
-	public List<String> getNombreProyectos() {
-		return nombreProyectos;
-	}
-
-	public void setNombreProyectos(List<String> nombreProyectos) {
-		this.nombreProyectos = nombreProyectos;
-	}
+	private List<Integer> idProyectos;
 
 }

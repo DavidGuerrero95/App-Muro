@@ -6,9 +6,12 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 import com.app.muro.models.Muro;
 
-public interface MuroRepository extends MongoRepository<Muro, String>{
+public interface MuroRepository extends MongoRepository<Muro, String> {
 
-	@RestResource(path = "buscar")
-	public Muro findByCodigoMuro(@Param("name") Integer nombre);
+	@RestResource(path = "find-muro")
+	public Muro findByCodigoMuro(@Param("codigoMuro") Integer codigoMuro);
 	
+	@RestResource(path = "exists-muro")
+	public Boolean existsByCodigoMuro(@Param("codigoMuro") Integer codigoMuro);
+
 }
